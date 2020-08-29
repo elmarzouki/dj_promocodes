@@ -82,13 +82,10 @@ class Transaction(TimeStampedModel):
     ]
     PAY_USING_CHOICES = [
         ("CASH", "Cash"),
-        ("KIOSK", "Kiosk"),
         ("CARD", "Card"),
     ]
     PAY_FOR_CHOICES = [
         ("BILL", "Bill"),
-        ("SUBSCRIPTION", "Subscription"),
-        ("BALANCE", "Balance"),
         ("SERVICE", "Service"),
     ]
     uuid = models.CharField(max_length=100, editable=False, null=True, unique=False)
