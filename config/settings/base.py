@@ -72,6 +72,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "dj_promocodes.users.apps.UsersConfig",
+    "dj_promocodes.promocodes.apps.PromocodesConfig"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
