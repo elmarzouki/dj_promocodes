@@ -1,6 +1,6 @@
 from django.urls import path
 
-from dj_promocodes.promocodes.views import PromocodeDetailView
+from dj_promocodes.promocodes.views import PromocodeDetailView, Pay
 
 app_name = "promocodes"
 
@@ -10,4 +10,5 @@ urlpatterns = [
         PromocodeDetailView.as_view(),
         name="promocode-detail-view",
     ),
+    path("pay", Pay.as_view(), name="pay"),
 ]

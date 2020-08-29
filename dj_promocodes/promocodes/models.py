@@ -141,6 +141,9 @@ class Invoice(TimeStampedModel, SoftDeletableModel):
 
     # TODO:// add transaction amount before promocode and after promocode
 
+    def __str__(self):
+        return f"{self.promocode_code} - {self.transaction.uuid}"
+
     class Meta:
         verbose_name = _("Invoice")
         verbose_name_plural = _("Invoice")

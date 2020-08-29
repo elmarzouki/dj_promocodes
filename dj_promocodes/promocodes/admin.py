@@ -3,7 +3,7 @@ from django.contrib.sites.models import Site
 from django.contrib.auth.models import Group
 from allauth.account.models import EmailAddress
 from allauth.socialaccount.models import SocialToken, SocialAccount, SocialApp
-from dj_promocodes.promocodes.models import Promocode, Balance
+from dj_promocodes.promocodes.models import Promocode, Balance, Transaction, Invoice
 
 
 @admin.register(Promocode)
@@ -13,6 +13,16 @@ class PromocodeAdmin(admin.ModelAdmin):
 
 @admin.register(Balance)
 class BalanceAdmin(admin.ModelAdmin):
+    list_per_page = 50
+
+
+@admin.register(Transaction)
+class TransactionAdmin(admin.ModelAdmin):
+    list_per_page = 50
+
+
+@admin.register(Invoice)
+class InvoiceAdmin(admin.ModelAdmin):
     list_per_page = 50
 
 

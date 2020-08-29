@@ -118,3 +118,12 @@ Use Promocodes
 
 2. DRF API Example: GET http://0.0.0.0:8000/api/promocodes/promocode/<str:promocode_code>
 
+3. Pay:
+  POST http://0.0.0.0:8000/api/promocodes/pay
+  `json
+    {
+      "amount": amount,
+      "promocode_code": "promocode_code",
+      "user_id": user_id
+    }
+  `
