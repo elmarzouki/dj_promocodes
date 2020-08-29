@@ -19,12 +19,12 @@ class TitleField(models.SlugField):
         return str(value).lower()
 
 
-# class PromocodesManager(models.Manager):
+# class PromocodeManager(models.Manager):
 #     now = timezone.localtime(timezone.now())
 
 #     def get_queryset(self):
 #         return (
-#             super(PromocodesManager, self)
+#             super(PromocodeManager, self)
 #             .get_queryset()
 #             .filter(
 #                 is_active=True,
@@ -34,9 +34,9 @@ class TitleField(models.SlugField):
 #         )
 
 
-class Promocodes(SoftDeletableModel, TimeStampedModel):
+class Promocode(SoftDeletableModel, TimeStampedModel):
     # custom manager to get valid promocodes
-    # objects = PromocodesManager()
+    # objects = PromocodeManager()
 
     title = models.CharField(max_length=255, null=False, blank=False)
     description = models.TextField(blank=False, null=False)
@@ -66,7 +66,7 @@ class Promocodes(SoftDeletableModel, TimeStampedModel):
 
 class Balance(TimeStampedModel):
     promocode = models.ForeignKey(
-        Promocodes,
+        Promocode,
         on_delete=models.PROTECT,
     )
     value = models.IntegerField()
@@ -104,7 +104,7 @@ class Transaction(TimeStampedModel):
         related_name="transactions",
     )
     promocode = models.ForeignKey(
-        Promocodes,
+        Promocode,
         on_delete=models.SET_NULL,
         related_name="transactions",
         null=True,
