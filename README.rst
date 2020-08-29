@@ -87,3 +87,14 @@ See detailed `cookiecutter-django Docker documentation`_.
 
 
 
+
+Run and go
+----------
+run the app using docker
+
+Docker
+^^^^^^
+::
+
+  $ docker-compose -f local.yml build
+  $ docker-compose -f local.yml up -d
