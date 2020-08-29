@@ -13,3 +13,10 @@ django-model-utils==4.0.0  # https://github.com/jazzband/django-model-utils
 django-allauth==0.42.0  # https://github.com/pennersr/django-allauth
 django-crispy-forms==1.9.2  # https://github.com/django-crispy-forms/django-crispy-forms
 django-redis==4.12.1  # https://github.com/jazzband/django-redis
+
+# Django REST Framework
+# ------------------------------------------------------------------------------
+djangorestframework==3.11.1  # https://github.com/encode/django-rest-framework
+coreapi==2.3.3  # https://github.com/core-api/python-client
+django-rest-swagger==2.2.0
+django-rest-auth==0.9.5

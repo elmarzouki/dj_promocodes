@@ -107,3 +107,14 @@ Docker
 
 If you need a shell, run: `docker-compose -f local.yml run --rm django python manage.py shell_plus`
 To check the logs out, run: `docker-compose -f local.yml logs`
+
+
+Use Promocodes
+--------------
+
+1. Dashboard Example: 
+    GET http://0.0.0.0:8000/admin/promocodes/promocode/add/
+    GET http://0.0.0.0:8000/admin/promocodes/balance/add/
+
+2. DRF API Example: GET http://0.0.0.0:8000/api/promocodes/promocode/<str:promocode_code>
+
