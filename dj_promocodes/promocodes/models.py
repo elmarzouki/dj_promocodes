@@ -71,6 +71,9 @@ class Balance(TimeStampedModel):
     )
     value = models.IntegerField()
 
+    def __str__(self):
+        return f"{self.promocode.code} - {self.value}"
+
 
 class Transaction(TimeStampedModel):
     STATUS_CHOICES = [

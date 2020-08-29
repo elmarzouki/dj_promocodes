@@ -98,3 +98,12 @@ Docker
 
   $ docker-compose -f local.yml build
   $ docker-compose -f local.yml up -d
+
+  $ docker-compose -f local.yml run django python manage.py makemigrations
+  $ docker-compose -f local.yml run django python manage.py migrate
+  $ docker-compose -f local.yml run django python manage.py createsuperuser
+  $ firefox http://localhost:8000/admin/
+
+
+If you need a shell, run: `docker-compose -f local.yml run --rm django python manage.py shell_plus`
+To check the logs out, run: `docker-compose -f local.yml logs`
