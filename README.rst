@@ -127,3 +127,7 @@ Use Promocodes
       "user_id": user_id
     }
   `
+
+4. unittest
+::
+  $ docker-compose -f local.yml run django python manage.py test
