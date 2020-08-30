@@ -1,5 +1,6 @@
 from django.db import models
-from django.utils import timezone
+
+# from django.utils import timezone
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from model_utils.models import SoftDeletableModel, TimeStampedModel
@@ -63,6 +64,15 @@ class Promocode(SoftDeletableModel, TimeStampedModel):
     def benefits(self):
         return self.balance_set.values_list("value", flat=True)
 
+    # @property
+    # def available_redeem(self):
+    #     sold = 0
+    #     sold = self.transactions.filter(
+    #         status="SUCCESSFUL", promocode__code=self.code
+    #     ).count()
+
+    #     return self.quantity - sold
+
 
 class Balance(TimeStampedModel):
     promocode = models.ForeignKey(
@@ -76,6 +86,7 @@ class Balance(TimeStampedModel):
 
 
 class Transaction(TimeStampedModel):
+    # TODO:// add validate_promocode on transaction creation "model level"
     STATUS_CHOICES = [
         ("SUCCESSFUL", "Successful"),
         ("FAILED", "Failed"),
